@@ -81,4 +81,18 @@
       phone = #{phone,jdbcType=VARCHAR}
     where userId = #{userid,jdbcType=INTEGER}
   </update>
+
+    <!--添加用户传入list参数-->
+    <insert id="userInfoByList" parameterType="java.util.List">
+     INSERT INTO  t_user
+     VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.userid},
+            #{item.username},
+            #{item.password},
+            #{item.phone}
+            )
+        </foreach>
+    </insert>
 </mapper>

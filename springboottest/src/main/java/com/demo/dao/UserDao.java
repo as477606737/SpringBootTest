@@ -20,4 +20,6 @@ public interface UserDao {
     int updateByPrimaryKeySelective(user var1);
 
     int updateByPrimaryKey(user var1);
+
+    void userInfoByList(List<user> list);
 }
