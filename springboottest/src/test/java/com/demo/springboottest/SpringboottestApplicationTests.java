@@ -34,17 +34,19 @@ public class SpringboottestApplicationTests {
 	@Test
 	public void contextLoads() {
      //  System.out.println("测试结果："+userDao.selectByPrimaryKey(1).getUsername());
-//        System.out. println("结果:"+userJPA.findAll());
+     //  System.out. println("结果:"+userJPA.findAll());
 //        Optional<user> us = userJPA.findById(1) ;
 //        user use = us.get();
 //        System.out.println(use.getPhone());
-        dyUserInfo dyUserInfo = new dyUserInfo();
+        // dyUserInfo dyUserInfo = new dyUserInfo();
       //  dyUserInfo.setUiid("2");
-
-        Example<dyUserInfo> ex = Example.of(dyUserInfo);
+        // Example<dyUserInfo> ex = Example.of(dyUserInfo);
 //        Optional<dyUserInfo> us =   dyUserInfoJpa.findOne(ex);
 
-        //JPA排序和简单分页
+
+       /* //JPA排序和简单分页
+        // dyUserInfo dyUserInfo = new dyUserInfo();
+           // Example<dyUserInfo> ex = Example.of(dyUserInfo);
         Sort.Direction sort =  Sort.Direction.ASC;  //升序
         ///获取PageRequest对象 index:页码 从0开始  size每页容量 sort排序方式 "uiid"->properties 以谁为准排序
         Pageable pageable = PageRequest.of(0, 2, sort, "uiid");
@@ -55,8 +57,11 @@ public class SpringboottestApplicationTests {
         System.out.println("个数："+  page.getTotalElements());
 ///获取该分页的列表
         List<dyUserInfo> list = page.getContent();
-        System.out.println("分页："+list);
+        System.out.println("分页："+list);*/
 
+       //更新字段
+     user user = new user(1,"测试0325","测试0325","测试0325");
+     userJPA.save(user);
 
     }
 
