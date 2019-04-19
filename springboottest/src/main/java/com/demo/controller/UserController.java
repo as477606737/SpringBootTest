@@ -54,6 +54,7 @@ public class UserController {
     @RequestMapping(value = "/test/{username}/{password}" , method = RequestMethod.GET )
     @ResponseBody
     public String Test(@PathVariable String username, @PathVariable String password){
+        System.out.println("这里做一个测试");
         return "test:"+username+"/"+password;
     }
 }
