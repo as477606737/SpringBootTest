@@ -51,4 +51,8 @@ public class UserController {
         userService.userInfoByList(list);
         return 1;
     }
+
+    public  void testUser(){
+        System.out.println("测试分支效果");
+    }
 }
