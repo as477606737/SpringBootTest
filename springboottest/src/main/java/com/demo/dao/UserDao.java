@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Map;
 
 @Component
 public interface UserDao {
@@ -22,4 +23,7 @@ public interface UserDao {
     int updateByPrimaryKey(user var1);
 
     void userInfoByList(List<user> list);
+
+    List<Map> userInfoAll();
+
 }

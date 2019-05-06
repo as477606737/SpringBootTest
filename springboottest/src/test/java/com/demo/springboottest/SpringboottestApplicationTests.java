@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.*;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -32,7 +33,8 @@ public class SpringboottestApplicationTests {
     private DyUserInfoJpa dyUserInfoJpa;
 
 	@Test
-	public void contextLoads() {
+    @Transactional()
+    public void contextLoads() {
      //  System.out.println("测试结果："+userDao.selectByPrimaryKey(1).getUsername());
      //  System.out. println("结果:"+userJPA.findAll());
 //        Optional<user> us = userJPA.findById(1) ;
@@ -60,9 +62,9 @@ public class SpringboottestApplicationTests {
         System.out.println("分页："+list);*/
 
        //更新字段
-     user user = new user(1,"测试0325","测试0325","测试0325");
+     user user = new user(11,"demo0505","demo0505","demo0505");
      userJPA.save(user);
-
+        //     //userJPA.saveAndFlush(user);
     }
 
 }

@@ -4,6 +4,7 @@ import com.demo.model.user;
 
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2018/4/19.
@@ -11,4 +12,6 @@ import java.util.List;
 public interface UserService {
 
       void userInfoByList(List<user> list);
+
+    List<Map> userInfoAll();
 }

@@ -95,4 +95,11 @@
             )
         </foreach>
     </insert>
+
+    <select id="userInfoAll" resultType="java.util.Map" >
+        SELECT
+        *
+        FROM
+        t_user
+    </select>
 </mapper>

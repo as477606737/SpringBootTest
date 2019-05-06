@@ -2,14 +2,18 @@ package com.demo.controller;
 
 import com.demo.model.user;
 import com.demo.service.UserService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ProjectName: springboottest
@@ -35,8 +39,8 @@ public class UserController {
     @RequestMapping(value = "/userAdd")
     public int addUser(){
         System.out.println("add");
-        List list = new ArrayList();
       user us1 = new user();
+        List list = new ArrayList();
       us1.setUserid(7);
       us1.setUsername("测试数据1");
       us1.setPassword("测试数据1");
@@ -54,5 +58,15 @@ public class UserController {
 
     public  void testUser(){
         System.out.println("测试分支效果");
+    }
+
+
+    @RequestMapping(value = "userAll" , method = RequestMethod.GET)
+    @ResponseBody
+    public Object userAll(){
+        PageHelper.startPage(1,5);
+      List<Map> all =  userService.userInfoAll();
+        PageInfo pageInfo = new PageInfo(all);
+        return pageInfo ;
     }
 }

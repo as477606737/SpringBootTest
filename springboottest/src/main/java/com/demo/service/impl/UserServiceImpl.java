@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ProjectName: springboottest
@@ -32,5 +33,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public void userInfoByList(List<user> list) {
         userDao.userInfoByList(list);
+    }
+
+    @Override
+    public List<Map> userInfoAll() {
+        return userDao.userInfoAll();
     }
 }
