@@ -1,13 +1,17 @@
 package com.demo.controller;
 
+import com.demo.model.demo;
 import com.demo.model.user;
 import com.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ProjectName: springboottest
@@ -56,5 +60,14 @@ public class UserController {
     public String Test(@PathVariable String username, @PathVariable String password){
         System.out.println("这里做一个测试");
         return "test:"+username+"/"+password;
+    }
+
+
+    @RequestMapping(value = "/postTest" ,method = RequestMethod.POST)
+    @ResponseBody
+    public  Object PostTest(@RequestBody  demo demo){
+      Map map = new HashMap();
+      map.put("aa","bb");
+        return  map ;
     }
 }
