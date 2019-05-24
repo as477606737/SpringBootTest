@@ -6,10 +6,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,5 +65,20 @@ public class UserController {
       List<Map> all =  userService.userInfoAll();
         PageInfo pageInfo = new PageInfo(all);
         return pageInfo ;
+    }
+
+    @RequestMapping(value = "/UserPaging", method = RequestMethod.POST)
+    @ResponseBody
+    public Object userInfoPag(@RequestBody Map map ){
+        PageHelper.startPage((Integer) map.get("currentPage"),(Integer) map.get("size"));
+        List<Map> all =  userService.userInfoAll();
+        PageInfo pageInfo = new PageInfo(all);
+        return pageInfo ;
+    }
+    @RequestMapping(value = "/userInfoPaging/{page}/{size}" , method = RequestMethod.GET)
+    @ResponseBody
+     public Object userInfoPaging(@PathVariable Integer page ,@PathVariable Integer size){
+        List<Map> all =  userService.userInfoAll();
+     return all ;
     }
 }
