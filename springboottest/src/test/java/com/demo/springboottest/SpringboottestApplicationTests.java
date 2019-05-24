@@ -38,10 +38,11 @@ public class SpringboottestApplicationTests {
 //        Optional<user> us = userJPA.findById(1) ;
 //        user use = us.get();
 //        System.out.println(use.getPhone());
-        // dyUserInfo dyUserInfo = new dyUserInfo();
-      //  dyUserInfo.setUiid("2");
-        // Example<dyUserInfo> ex = Example.of(dyUserInfo);
-//        Optional<dyUserInfo> us =   dyUserInfoJpa.findOne(ex);
+         dyUserInfo dyUserInfo = new dyUserInfo();
+       dyUserInfo.setUiid("2");
+         Example<dyUserInfo> ex = Example.of(dyUserInfo);
+        Optional<dyUserInfo> us =   dyUserInfoJpa.findOne(ex);
+        System.out.println(us);
 
 
        /* //JPA排序和简单分页
@@ -60,8 +61,8 @@ public class SpringboottestApplicationTests {
         System.out.println("分页："+list);*/
 
        //更新字段
-     user user = new user(1,"测试0325","测试0325","测试0325");
-     userJPA.save(user);
+//     user user = new user(1,"测试0325","测试0325","测试0325");
+//     userJPA.save(user);
 
     }
 
