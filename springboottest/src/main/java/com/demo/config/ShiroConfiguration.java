@@ -45,6 +45,7 @@ public class ShiroConfiguration {
         filterChainDefinitionMap.put("/img/**", "anon");
         filterChainDefinitionMap.put("/js/**", "anon");
         filterChainDefinitionMap.put("/html/**", "anon");
+        filterChainDefinitionMap.put("/hello", "anon");
         filterChainDefinitionMap.put("/redis/**","anon"); //放行所有访问REDIS的请求
         //配置退出 过滤器,其中的具体的退出代码Shiro已经替我们实现了
         filterChainDefinitionMap.put("/logout", "logout");
